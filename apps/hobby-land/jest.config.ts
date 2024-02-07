@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'adeptus-inventorius',
+  displayName: 'hobby-land',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/adeptus-inventorius',
+  coverageDirectory: '../../coverage/apps/hobby-land',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
