@@ -1,0 +1,52 @@
+{
+  "name": "hobby-land-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/hobby-land-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/hobby-land-api",
+        "main": "apps/hobby-land-api/src/main.ts",
+        "tsConfig": "apps/hobby-land-api/tsconfig.app.json",
+        "assets": ["apps/hobby-land-api/src/assets"],
+        "webpackConfig": "apps/hobby-land-api/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "hobby-land-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "hobby-land-api:build:development"
+        },
+        "production": {
+          "buildTarget": "hobby-land-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/hobby-land-api/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
