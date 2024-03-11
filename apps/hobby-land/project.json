@@ -8,19 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/hobby-land",
         "index": "apps/hobby-land/src/index.html",
         "main": "apps/hobby-land/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/hobby-land/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/hobby-land/src/favicon.ico",
           "apps/hobby-land/src/assets"
         ],
-        "styles": ["apps/hobby-land/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "apps/hobby-land/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -70,11 +77,15 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
+      "outputs": [
+        "{options.outputFile}"
+      ]
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/hobby-land/jest.config.ts"
       }
