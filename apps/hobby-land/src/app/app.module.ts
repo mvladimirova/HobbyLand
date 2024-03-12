@@ -7,8 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
+import { NavigationListComponent } from './components/navigation-list/navigation-list.component';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavigationListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
