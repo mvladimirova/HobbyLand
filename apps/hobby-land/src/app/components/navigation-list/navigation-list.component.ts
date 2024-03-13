@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './navigation-list.component.html',
   styleUrl: './navigation-list.component.scss',
 })
-export class NavigationListComponent {}
+export class NavigationListComponent {
+  public navigationItems = [{ title: 'Score Board', icon: 'scoreboard' }];
+}

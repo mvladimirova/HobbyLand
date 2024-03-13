@@ -1,1 +1,8 @@
-<p>navigation-list works!</p>
+<mat-nav-list>
+  @for(navItem of navigationItems; track navItem){
+  <mat-list-item>
+    <mat-icon matListItemIcon>{{ navItem.icon }}</mat-icon>
+    <a href="#" matListItemTitle>{{ navItem.title }}</a>
+  </mat-list-item>
+  }
+</mat-nav-list>
