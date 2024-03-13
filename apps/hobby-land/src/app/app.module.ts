@@ -10,10 +10,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 
 import { NavigationListComponent } from './components/navigation-list/navigation-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent, NavigationListComponent],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -23,5 +25,6 @@ import { NavigationListComponent } from './components/navigation-list/navigation
     MatIconModule,
   ],
   bootstrap: [AppComponent],
+  providers: [],
 })
 export class AppModule {}
