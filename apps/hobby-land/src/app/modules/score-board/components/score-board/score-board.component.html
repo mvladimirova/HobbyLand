@@ -1,1 +1,36 @@
-<p>score-board works!</p>
+<table mat-table [dataSource]="dataSource">
+  <!-- Date Column -->
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef>Date</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.date | date : 'shortDate' }}
+    </td>
+  </ng-container>
+
+  <!-- Game name column -->
+  <ng-container matColumnDef="gameName">
+    <th mat-header-cell *matHeaderCellDef>Game Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.gameName }}</td>
+  </ng-container>
+
+  <!-- Players column -->
+  <ng-container matColumnDef="players">
+    <th mat-header-cell *matHeaderCellDef>Players</th>
+    <td mat-cell *matCellDef="let element">
+      @for(player of element.players; track player){
+      <p>{{ player.name }}</p>
+      }
+    </td>
+  </ng-container>
+
+  <!-- Winner column -->
+  <ng-container matColumnDef="winner">
+    <th mat-header-cell *matHeaderCellDef>Winner</th>
+    <td mat-cell *matCellDef>
+      <p>winner</p>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

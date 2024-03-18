@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 
+import { AppComponent } from './app.component';
 import { NavigationListComponent } from './components/navigation-list/navigation-list.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,6 +25,5 @@ import { AppRoutingModule } from './app-routing.module';
     MatIconModule,
   ],
   bootstrap: [AppComponent],
-  providers: [],
 })
 export class AppModule {}
