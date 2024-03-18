@@ -1,36 +1,53 @@
-<table mat-table [dataSource]="dataSource">
-  <!-- Date Column -->
-  <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef>Date</th>
-    <td mat-cell *matCellDef="let element">
-      {{ element.date | date : 'shortDate' }}
-    </td>
-  </ng-container>
+<div class="scores-container">
+  <header>
+    <mat-icon color="primary">scoreboard</mat-icon>
+    <h2>Score board</h2>
 
-  <!-- Game name column -->
-  <ng-container matColumnDef="gameName">
-    <th mat-header-cell *matHeaderCellDef>Game Name</th>
-    <td mat-cell *matCellDef="let element">{{ element.gameName }}</td>
-  </ng-container>
+    <button
+      mat-icon-button
+      color="primary"
+      class="material-symbols-outlined"
+      aria-label="Add new score">
+      add_circle
+    </button>
+  </header>
 
-  <!-- Players column -->
-  <ng-container matColumnDef="players">
-    <th mat-header-cell *matHeaderCellDef>Players</th>
-    <td mat-cell *matCellDef="let element">
-      @for(player of element.players; track player){
-      <p>{{ player.name }}</p>
-      }
-    </td>
-  </ng-container>
+  <table mat-table [dataSource]="dataSource">
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.date | date : 'shortDate' }}
+      </td>
+    </ng-container>
 
-  <!-- Winner column -->
-  <ng-container matColumnDef="winner">
-    <th mat-header-cell *matHeaderCellDef>Winner</th>
-    <td mat-cell *matCellDef>
-      <p>winner</p>
-    </td>
-  </ng-container>
+    <!-- Game name column -->
+    <ng-container matColumnDef="gameName">
+      <th mat-header-cell *matHeaderCellDef>Game Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.gameName }}</td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+    <!-- Players column -->
+    <ng-container matColumnDef="players">
+      <th mat-header-cell *matHeaderCellDef>Players</th>
+      <td mat-cell *matCellDef="let element">
+        @for(player of element.players; track player){
+        <p>{{ player.name }}</p>
+        }
+      </td>
+    </ng-container>
+
+    <!-- Winner column -->
+    <ng-container matColumnDef="winner">
+      <th mat-header-cell *matHeaderCellDef>Winner</th>
+      <td mat-cell *matCellDef="let element">
+        @for(player of element.players; track player){ @if(player.winner) {
+        <p class="winner">{{ player.name }}</p>
+        } }
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

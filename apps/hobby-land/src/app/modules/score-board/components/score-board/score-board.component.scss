@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  mat-icon {
+    padding: 12px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
+
+p.winner {
+  font-weight: 700;
+  margin: 0;
+}
