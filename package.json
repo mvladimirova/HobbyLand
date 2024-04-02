@@ -2,7 +2,9 @@
   "name": "@org/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start:dev:db": "./apps/hobby-land-api/src/scripts/start_db.sh"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "17.1.3",
