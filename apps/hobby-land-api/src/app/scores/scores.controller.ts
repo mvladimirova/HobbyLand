@@ -3,9 +3,9 @@ import { ScoresService } from './scores.service';
 
 @Controller('scores')
 export class ScoresController {
-  constructor() {}
+  constructor(private readonly scoresService: ScoresService) {}
   @Get()
   getData() {
-    // return this.appService.getData();
+    return this.scoresService.getData();
   }
 }

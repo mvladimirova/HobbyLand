@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { ScoreBoardRoutingModule } from './score-board-routing.module';
 import { ScoreBoardComponent } from './components/score-board/score-board.component';
-import { MatIconModule } from '@angular/material/icon';
+import { ScoreBoardService } from './score-board.service';
 
 @NgModule({
   declarations: [ScoreBoardComponent],
@@ -18,5 +19,6 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
   ],
   exports: [ScoreBoardComponent],
+  providers: [ScoreBoardService],
 })
 export class ScoreBoardModule {}
