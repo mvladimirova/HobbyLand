@@ -8,9 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { ScoreBoardRoutingModule } from './score-board-routing.module';
 import { ScoreBoardComponent } from './components/score-board/score-board.component';
 import { ScoreBoardService } from './score-board.service';
+import { CreateScoreComponent } from './components/create-score/create-score.component';
 
 @NgModule({
-  declarations: [ScoreBoardComponent],
+  declarations: [ScoreBoardComponent, CreateScoreComponent],
   imports: [
     CommonModule,
     ScoreBoardRoutingModule,
