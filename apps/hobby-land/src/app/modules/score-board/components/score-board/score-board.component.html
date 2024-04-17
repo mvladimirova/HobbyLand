@@ -32,7 +32,7 @@
       <th mat-header-cell *matHeaderCellDef>Players</th>
       <td mat-cell *matCellDef="let element">
         @for(player of element.players; track player){
-        <p>{{ player.name }}</p>
+        <p>{{ player }}</p>
         }
       </td>
     </ng-container>
@@ -41,9 +41,7 @@
     <ng-container matColumnDef="winner">
       <th mat-header-cell *matHeaderCellDef>Winner</th>
       <td mat-cell *matCellDef="let element">
-        @for(player of element.players; track player){ @if(player.winner) {
-        <p class="winner">{{ player.name }}</p>
-        } }
+        <p class="winner">{{ element.winner.name }}</p>
       </td>
     </ng-container>
 

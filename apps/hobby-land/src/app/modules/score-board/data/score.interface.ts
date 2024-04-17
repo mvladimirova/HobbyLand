@@ -1,10 +1,11 @@
 export interface Score {
   date: Date;
   gameName: string;
-  players: Player[];
+  players: string[];
+  winner: Player;
 }
 
-interface Player {
+export interface Player {
   name: string;
-  winner?: boolean;
+  id: string;
 }

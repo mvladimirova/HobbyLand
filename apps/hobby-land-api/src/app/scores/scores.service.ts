@@ -11,6 +11,6 @@ export class ScoresService {
   ) {}
 
   public getData(): Promise<Score[]> {
-    return this.scoreRepository.find();
+    return this.scoreRepository.find({ relations: { winner: true } });
   }
 }
