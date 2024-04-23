@@ -1,7 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
+
 import { Score } from '../../data/score.interface';
 import { ScoreBoardService } from '../../score-board.service';
-import { Subscription } from 'rxjs';
+import { CreateScoreComponent } from '../create-score/create-score.component';
 
 @Component({
   selector: 'hobby-land-score-board',
@@ -14,7 +17,10 @@ export class ScoreBoardComponent implements OnInit, OnDestroy {
 
   private _subscription = new Subscription();
 
-  constructor(private _scoresService: ScoreBoardService) {}
+  constructor(
+    public dialog: MatDialog,
+    private _scoresService: ScoreBoardService
+  ) {}
 
   public ngOnInit(): void {
     this._subscription.add(
@@ -22,6 +28,10 @@ export class ScoreBoardComponent implements OnInit, OnDestroy {
         .getScores()
         .subscribe((scores) => (this.dataSource = scores))
     );
+  }
+
+  public addScore(): void {
+    this.dialog.open(CreateScoreComponent);
   }
 
   public ngOnDestroy(): void {
