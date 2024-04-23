@@ -1,2 +1,33 @@
 <h3 mat-dialog-title>Add new score</h3>
-<mat-dialog-content> </mat-dialog-content>
+<mat-dialog-content>
+  <form [formGroup]="scoreForm">
+    <!-- Game name input -->
+    <mat-form-field>
+      <mat-label>Game name</mat-label>
+      <input type="text" matInput formControlName="gameName" />
+    </mat-form-field>
+
+    <!-- Date input -->
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Players -->
+    @for(player of scoreForm.controls.players; track player){
+    <mat-form-field>
+      <mat-label>Add players</mat-label>
+      <input matInput formControlName="players" /> </mat-form-field
+    >}
+
+    <!-- Winner -->
+    <mat-form-field>
+      <mat-label>Winner</mat-label>
+      <input type="text" matInput formControlName="winner" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
